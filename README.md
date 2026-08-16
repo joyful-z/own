@@ -16,10 +16,7 @@ http://localhost:4173
 
 ## 部署到 GitHub Pages
 
-这个项目已经内置 GitHub Pages 自动部署配置：
-
-- `.github/workflows/pages.yml`
-- `.nojekyll`
+这个项目是纯静态站点，推荐直接使用 GitHub Pages 的分支发布。
 
 ### 第一次发布
 
@@ -38,8 +35,11 @@ git push -u origin main
 3. 进入 GitHub 仓库：
    - Settings
    - Pages
-   - Source 选择 `GitHub Actions`
-4. 等 Actions 跑完后，会得到一个公网地址：
+   - Source 选择 `Deploy from a branch`
+   - Branch 选择 `main`
+   - Folder 选择 `/ (root)`
+   - 点击 `Save`
+4. 等 GitHub Pages 发布完成后，会得到一个公网地址：
 
 ```text
 https://<你的用户名>.github.io/xhs-account-doctor/
@@ -55,7 +55,7 @@ git commit -m "update site"
 git push
 ```
 
-GitHub Actions 会自动重新部署。
+GitHub Pages 会自动重新发布。
 
 ## 当前版本说明
 
