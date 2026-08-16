@@ -1,0 +1,17 @@
+{
+  "name": "xhs-account-doctor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "小红书 AI 账号诊断与选题生成器 MVP 静态站点",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "start": "python3 -m http.server 4173"
+  },
+  "keywords": [
+    "xhs",
+    "ai",
+    "account-diagnosis",
+    "static-site"
+  ],
+  "license": "UNLICENSED"
+}

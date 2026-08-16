@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>账号急诊室 - 小红书 AI 账号诊断</title>
+    <meta
+      name="description"
+      content="输入账号定位和最近几篇标题，生成小红书账号诊断、选题建议和 7 天起号计划。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="账号急诊室首页">
+        <span class="brand-mark">诊</span>
+        <span>账号急诊室</span>
+      </a>
+      <nav class="nav-actions" aria-label="主导航">
+        <a href="#diagnosis">开始诊断</a>
+        <a href="#sample">示例报告</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="view active">
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <p class="eyebrow">小红书起号体检工具</p>
+            <h1>测测你的小红书账号为什么没流量</h1>
+            <p class="hero-subtitle">
+              输入账号定位和最近几篇标题，AI 给你生成账号诊断、选题建议和 7 天起号计划。
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#diagnosis">开始免费诊断</a>
+              <a class="btn secondary" href="#sample">先看示例</a>
+            </div>
+            <div class="quick-proof" aria-label="产品亮点">
+              <span>1 分钟填写</span>
+              <span>先看免费诊断</span>
+              <span>移动端可用</span>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img
+              src="https://copilot-cn.bytedance.net/api/ide/v1/text_to_image?prompt=realistic%20mobile%20phone%20showing%20Chinese%20social%20media%20creator%20analytics%20dashboard%20on%20a%20desk%2C%20notebook%20with%20content%20planning%20notes%2C%20clean%20modern%20workspace%2C%20soft%20daylight%2C%20professional%20product%20photography%2C%20high%20detail%2C%20no%20logos%2C%20no%20readable%20brand%20text&image_size=landscape_4_3"
+              alt="内容创作者正在查看账号数据和选题计划"
+            />
+            <div class="visual-report" id="sample">
+              <div class="report-mini-head">
+                <span>初诊结果</span>
+                <strong>62/100</strong>
+              </div>
+              <p>定位能看懂，但标题没有把用户痛点说出来。</p>
+              <ul>
+                <li>标题像日记，不像搜索答案</li>
+                <li>人群描述偏宽，系统难识别</li>
+                <li>选题缺少可收藏结构</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <section class="band">
+          <div class="section-head">
+            <p class="eyebrow">适合这些情况</p>
+            <h2>先别急着日更，先看看账号卡在哪里</h2>
+          </div>
+          <div class="pain-grid">
+            <article>发了很多篇，阅读还是几十</article>
+            <article>每天最痛苦的是想选题</article>
+            <article>标题写完自己都不想点</article>
+            <article>想变现，但内容一直像日记</article>
+            <article>看了爆款拆解，还是迁移不了</article>
+          </div>
+        </section>
+
+        <section class="band muted">
+          <div class="section-head">
+            <p class="eyebrow">免费先看</p>
+            <h2>诊断后你会拿到什么</h2>
+          </div>
+          <div class="deliver-grid">
+            <article>
+              <span class="icon-pill">01</span>
+              <h3>账号定位问题</h3>
+              <p>指出账号目前最影响流量的 1-2 个问题。</p>
+            </article>
+            <article>
+              <span class="icon-pill">02</span>
+              <h3>标题诊断</h3>
+              <p>判断标题为什么不够小红书，并给一个改写示例。</p>
+            </article>
+            <article>
+              <span class="icon-pill">03</span>
+              <h3>推荐选题</h3>
+              <p>先给 5 个可发选题，完整报告解锁 30 个。</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="diagnosis" class="view">
+        <div class="form-layout">
+          <div class="form-intro">
+            <p class="eyebrow">账号挂号单</p>
+            <h1>填完这张表，开始诊断</h1>
+            <p>越具体，报告越像给你本人写的。至少填写 3 个近期标题。</p>
+            <div class="side-note">
+              <strong>会诊重点</strong>
+              <span>定位、人群、选题、标题、发布计划</span>
+            </div>
+          </div>
+
+          <form id="diagnosisForm" class="diagnosis-form" novalidate>
+            <label>
+              <span>账号昵称 <em>选填</em></span>
+              <input name="accountName" type="text" placeholder="例如：阿林的职场成长笔记" maxlength="40" />
+            </label>
+
+            <label>
+              <span>账号赛道</span>
+              <select name="category" required>
+                <option value="">请选择赛道</option>
+                <option>职场成长</option>
+                <option>副业赚钱</option>
+                <option>情绪疗愈</option>
+                <option>读书成长</option>
+                <option>育儿教育</option>
+                <option>美妆穿搭</option>
+                <option>探店本地生活</option>
+                <option>AI 工具分享</option>
+                <option>其他</option>
+              </select>
+            </label>
+
+            <fieldset>
+              <legend>当前粉丝量</legend>
+              <div class="choice-grid" data-radio-group="followers">
+                <label><input type="radio" name="followers" value="0-100" />0-100</label>
+                <label><input type="radio" name="followers" value="100-500" />100-500</label>
+                <label><input type="radio" name="followers" value="500-1000" />500-1000</label>
+                <label><input type="radio" name="followers" value="1000-5000" />1000-5000</label>
+                <label><input type="radio" name="followers" value="5000 以上" />5000 以上</label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>账号目标 <em>最多选 2 个</em></legend>
+              <div class="choice-grid" data-checkbox-limit="2">
+                <label><input type="checkbox" name="goals" value="涨粉" />涨粉</label>
+                <label><input type="checkbox" name="goals" value="引流私域" />引流私域</label>
+                <label><input type="checkbox" name="goals" value="卖产品/服务" />卖产品/服务</label>
+                <label><input type="checkbox" name="goals" value="打造个人 IP" />打造个人 IP</label>
+                <label><input type="checkbox" name="goals" value="接广告/商务" />接广告/商务</label>
+                <label><input type="checkbox" name="goals" value="还没想清楚" />还没想清楚</label>
+              </div>
+            </fieldset>
+
+            <label>
+              <span>目标人群</span>
+              <input
+                name="targetAudience"
+                type="text"
+                placeholder="例如：想转行互联网运营的 25-30 岁女生"
+                maxlength="80"
+                required
+              />
+            </label>
+
+            <label>
+              <span>账号简介 <em>选填</em></span>
+              <textarea
+                name="bio"
+                rows="3"
+                placeholder="复制你现在的小红书简介，或者简单写一句你想做什么账号"
+                maxlength="200"
+              ></textarea>
+            </label>
+
+            <label>
+              <span>最近 3-5 篇笔记标题</span>
+              <textarea
+                name="recentTitles"
+                rows="5"
+                placeholder="一行一个标题，至少填 3 个"
+                maxlength="500"
+                required
+              ></textarea>
+            </label>
+
+            <label>
+              <span>当前最大困惑</span>
+              <textarea
+                name="painPoint"
+                rows="4"
+                placeholder="例如：不知道为什么阅读量一直很低，感觉标题和选题都没方向"
+                maxlength="240"
+                required
+              ></textarea>
+            </label>
+
+            <p id="formError" class="form-error" role="alert"></p>
+            <button class="btn primary submit-btn" type="submit">生成免费诊断</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="loading" class="view">
+        <div class="loading-panel">
+          <p class="eyebrow">诊断生成中</p>
+          <h1 id="loadingTitle">正在给你的账号挂号</h1>
+          <div class="progress-track" aria-label="生成进度">
+            <span id="progressBar"></span>
+          </div>
+          <ol class="loading-steps" id="loadingSteps">
+            <li>正在读取账号定位</li>
+            <li>正在拆你的标题病历</li>
+            <li>正在定位流量卡点</li>
+            <li>正在生成起号处方</li>
+          </ol>
+          <p class="tip" id="loadingTip">标题不是越夸张越好，而是要让目标用户觉得“这说的就是我”。</p>
+        </div>
+      </section>
+
+      <section id="report" class="view">
+        <div class="report-page">
+          <div class="report-header">
+            <div>
+              <p class="eyebrow">免费初诊</p>
+              <h1>你的账号初诊结果</h1>
+            </div>
+            <a class="btn secondary" href="#diagnosis">重新诊断</a>
+          </div>
+          <div id="freeReportRoot"></div>
+        </div>
+      </section>
+
+      <section id="full" class="view">
+        <div class="report-page">
+          <div class="report-header">
+            <div>
+              <p class="eyebrow">完整报告</p>
+              <h1>你的账号起号处方</h1>
+            </div>
+            <div class="report-actions">
+              <button class="btn secondary" id="copyFullReport" type="button">复制报告</button>
+              <a class="btn secondary" href="#diagnosis">重新诊断</a>
+            </div>
+          </div>
+          <div id="fullReportRoot"></div>
+        </div>
+      </section>
+
+      <section id="privacy" class="view">
+        <div class="simple-page">
+          <p class="eyebrow">隐私说明</p>
+          <h1>我们如何使用你的信息</h1>
+          <p>你填写的账号信息仅用于生成诊断报告、保存报告记录和改进产品体验。第一版不会自动抓取你的小红书账号，也不会公开展示你的微信号。</p>
+          <a class="btn primary" href="#home">返回首页</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="unlockModal" aria-hidden="true">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="unlockTitle">
+        <button class="icon-button" id="closeModal" type="button" aria-label="关闭">×</button>
+        <p class="eyebrow">解锁完整报告</p>
+        <h2 id="unlockTitle">领取完整账号处方</h2>
+        <p>留下微信，MVP 内测期先直接开放完整报告，也方便后续给你做人工精修。</p>
+        <form id="leadForm">
+          <label>
+            <span>微信号</span>
+            <input name="wechat" type="text" placeholder="填写你的微信号" maxlength="60" required />
+          </label>
+          <fieldset>
+            <legend>是否愿意接受人工诊断</legend>
+            <div class="choice-grid two">
+              <label><input type="radio" name="manualReview" value="愿意" checked />愿意</label>
+              <label><input type="radio" name="manualReview" value="暂时不用" />暂时不用</label>
+            </div>
+          </fieldset>
+          <p id="leadError" class="form-error" role="alert"></p>
+          <button class="btn primary submit-btn" type="submit">提交并查看完整报告</button>
+        </form>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <span>账号急诊室</span>
+      <a href="#privacy">隐私说明</a>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
